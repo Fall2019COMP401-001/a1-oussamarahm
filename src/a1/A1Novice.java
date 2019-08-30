@@ -33,7 +33,7 @@ public class A1Novice {
 				double cost = scan.nextDouble();
 				
 				double itemscost = calculateCostOfItem(quantity, cost);
-				totalcost += itemscost;
+				totalcost += itemscost + .00;
 			}
 			System.out.println(fullname + ": " + totalcost);
 		}
@@ -45,7 +45,7 @@ public class A1Novice {
 		for (int counter = 0; counter < quant; counter++) {
 			total += price;
 		}
-		return total;
+		return total + .00;
 	}
 	
 }
