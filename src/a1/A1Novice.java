@@ -14,21 +14,26 @@ public class A1Novice {
 		
 		
 		for (int i = 0; i < numofcustomers; i++) {
+			
 			String fname = scan.next();
-			
 			String finitial = fname.charAt(0) + ".";
-			
 			String lname = scan.next();
-			
 			String fullname = finitial + " " + lname;
 			
 			int numofitems = scan.nextInt();
-			double totalcost = 0;
+		
+			double totalcost = 0.00;
+
 			for (int j = 0; j < numofitems; j++) {
+			
 				int quantity = scan.nextInt();
+				
 				scan.next();
+				
 				double cost = scan.nextDouble();
-				totalcost = calculateCostOfItem(quantity, cost);
+				
+				double itemscost = calculateCostOfItem(quantity, cost);
+				totalcost += itemscost;
 			}
 			System.out.println(fullname + ": " + totalcost);
 		}
@@ -36,10 +41,11 @@ public class A1Novice {
 		
 	}
 	static double calculateCostOfItem(int quant, double price) {
-		for (int counter = 1; counter < quant; counter++) {
-			price = price + price;
+		double total = 0.00;
+		for (int counter = 0; counter < quant; counter++) {
+			total += price;
 		}
-		return price;
+		return total;
 	}
 	
 }
