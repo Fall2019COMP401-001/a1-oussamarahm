@@ -26,6 +26,7 @@ public class A1Novice {
 			int numofitems = scan.nextInt();
 		
 			double totalcost = 0.00;
+			
 
 			for (int j = 0; j < numofitems; j++) {
 			
@@ -38,11 +39,10 @@ public class A1Novice {
 				double itemscost = calculateCostOfItem(quantity, cost);
 				
 				totalcost += itemscost;
-				String newtotalcost;
 				
-				newtotalcost = String.format("%.2f", totalcost);
 			}
-			System.out.println(fullname + ": " + totalcost);
+			String newtotal = String.format("%.2f", totalcost);
+			System.out.println(fullname + ": " + newtotal);
 		}
 		
 		
