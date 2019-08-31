@@ -10,8 +10,11 @@ public class A1Novice {
 
 		// Your code follows here.
 		
+		// Declare and initialize a variable for the number of customers.
+		
 		int numofcustomers = scan.nextInt();
 		
+		// Create a for loop in order to cycle through each customer's item list.
 		
 		for (int i = 0; i < numofcustomers; i++) {
 			
@@ -33,7 +36,11 @@ public class A1Novice {
 				double cost = scan.nextDouble();
 				
 				double itemscost = calculateCostOfItem(quantity, cost);
-				totalcost += itemscost + .00;
+				
+				totalcost += itemscost;
+				String newtotalcost;
+				
+				newtotalcost = String.format("%.2f", totalcost);
 			}
 			System.out.println(fullname + ": " + totalcost);
 		}
@@ -45,7 +52,7 @@ public class A1Novice {
 		for (int counter = 0; counter < quant; counter++) {
 			total += price;
 		}
-		return total + .00;
+		return total;
 	}
 	
 }
