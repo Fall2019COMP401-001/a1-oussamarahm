@@ -97,28 +97,31 @@ public class A1Adept {
 				
 				// Calculate total amount spent on product.
 				
-				costofitem = costofitem * quantity;
+				double producttotal = costofitem * quantity;
 				
-				// Store that amount in "total costs" array.
+				// Store that amount in "total purchase" array.
 				
-				totalcosts[j] = costofitem;
+				totalpurchase[i] += producttotal;
+				// HEREEEE Delete totalcosts array
+				
+				// totalcosts[j] = costofitem;
 				
 			}
 			
 			// For loop to calculate total amount spent by that customer.
 			
-			double totalspent = totalcosts[0];
+			// double totalspent = totalcosts[0];
 			
-			for (int l = 1; l < totalcosts.length; l++) {
+			// for (int l = 1; l < totalcosts.length; l++) {
 				
-				totalspent += totalcosts[l];
+			//	totalspent += totalcosts[l];
 				
-			}
+			// }
 			
 			
 			// Store the amount spent by the customer in "total purchase" array at the same index of the respective customer in the "names" array.
 			
-			totalpurchase[i] = totalspent;
+			// totalpurchase[i] += totalspent;
 			
 		}
 		
