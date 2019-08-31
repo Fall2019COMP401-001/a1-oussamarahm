@@ -139,7 +139,7 @@ public class A1Adept {
 		
 		// Variable for Biggest output line.
 		
-		String biggest = "Biggest: " + names[maxindex] + "(" + newmax + ")";
+		String biggest = "Biggest: " + names[maxindex] + " (" + newmax + ")";
 		
 		// Compare purchase amounts to find index of smallest purchase.
 		
@@ -158,7 +158,7 @@ public class A1Adept {
 		
 		// Variable for Smallest output line.
 		
-		String smallest = "Smallest: " + names[minindex] + "(" + newmin + ")";
+		String smallest = "Smallest: " + names[minindex] + " (" + newmin + ")";
 		
 		// Find average total purchase amount.
 		
