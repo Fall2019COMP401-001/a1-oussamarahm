@@ -1,5 +1,6 @@
 package a1;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class A1Jedi {
@@ -47,6 +48,10 @@ public class A1Jedi {
 
 			int numofpurchases = scan.nextInt();
 			
+			// Array to hold indices. 
+			
+			int[] indices = new int[numofpurchases];
+			
 			// For loop to cycle through the purchases.
 			
 			for (int k = 0; k < numofpurchases; k++) {
@@ -59,7 +64,7 @@ public class A1Jedi {
 				
 				String nameofitem = scan.next();
 				
-				// Variable to hold index of item.
+				// Variable to hold index of all items.
 				
 				int itemindex = 0;
 				
@@ -72,14 +77,43 @@ public class A1Jedi {
 					}
 				}
 				
+				// Add the item's index to the indices array.
+				
+				indices[k] = itemindex;
+				
 				// Add 1 to that index in the "customers" array to tally how many customers bought that item.
 				
-				customers[itemindex] += 1;
+				// customers[itemindex] += 1;
 				
 				// Add "item quantity" variable to "times bought" array to tally how many times that item is bought.
 				
 				timesbought[itemindex] += itemquantity;
 			}
+			
+			// List to store all indices without repeating.
+			
+			ArrayList<Integer> indexes = new ArrayList<Integer>(0);
+			
+			// Cycle through indices to find repeating indices. Add one of each index to indexes list.
+			
+			for (int z = 0; z < indices.length; z++) {
+				
+				if (indexes.contains(indices[z])) {
+					
+				} else {
+					indexes.add(indices[z]);
+				}
+			}
+			
+			
+			// For loop to cycle through list and add 1 to each of the indices of the customers array specified in the new "indexes" list.
+			
+			for (int x = 0; x < indexes.size(); x++) {
+				customers[indexes.get(x)] += 1;
+			}
+			
+			
+			
 		}
 		
 		// For loop to cycle through all items in the "items in store" array.
