@@ -62,10 +62,6 @@ public class A1Adept {
 			
 			int purchases = scan.nextInt();
 			
-			// Array to store money spent on each item.
-			
-			double[] totalcosts = new double[purchases];
-			
 			// For loop to cycle through purchases.
 			
 			for (int j = 0; j < purchases; j++) {
@@ -78,50 +74,29 @@ public class A1Adept {
 				
 				String product = scan.next();
 				
-				// Variable for index of product in the items array.
+				// For loop to find the index of the product in the items array.
 				
 				int index  = 0;
 				
-				// For loop to find the index of the product in the items array.
-				
 				for (int k = 0; k < items.length; k++) {
-					if (product == items[k]) {
+					if (product.compareTo(items[k]) == 0) {
 						index = k;
-						break;
 					}
 				}
 				
 				// Use index of item in items array to find cost of product in costs array.
 				
-				double costofitem = costs[index];
+				double costofproduct = costs[index];
 				
 				// Calculate total amount spent on product.
 				
-				double producttotal = costofitem * quantity;
+				double producttotal = costofproduct * quantity;
 				
 				// Store that amount in "total purchase" array.
 				
 				totalpurchase[i] += producttotal;
-				// HEREEEE Delete totalcosts array
-				
-				// totalcosts[j] = costofitem;
 				
 			}
-			
-			// For loop to calculate total amount spent by that customer.
-			
-			// double totalspent = totalcosts[0];
-			
-			// for (int l = 1; l < totalcosts.length; l++) {
-				
-			//	totalspent += totalcosts[l];
-				
-			// }
-			
-			
-			// Store the amount spent by the customer in "total purchase" array at the same index of the respective customer in the "names" array.
-			
-			// totalpurchase[i] += totalspent;
 			
 		}
 		
@@ -130,58 +105,51 @@ public class A1Adept {
 		int maxindex = 0;
 		double max = 0;
 		
-		for (int i = 0; i < totalpurchase.length; i++) {
-			double a = totalpurchase[i];
-			if (a > max) {
-				max = a;
-				maxindex = i;
+		for (int a = 0; a < totalpurchase.length; a++) {
+			if (totalpurchase[a] > max) {
+				max = totalpurchase[a];
+				maxindex = a;
 			}
 		}
 		
 		String newmax = String.format("%.2f", max);
+		// Biggest output line.
 		
-		// Variable for Biggest output line.
-		
-		String biggest = "Biggest: " + names[maxindex] + " (" + newmax + ")";
+		System.out.println("Biggest: " + names[maxindex] + " (" + newmax + ")");
 		
 		// Compare purchase amounts to find index of smallest purchase.
 		
 		int minindex = 0;
 		double min = Integer.MAX_VALUE;
 		
-		for (int i = 0; i < totalpurchase.length; i++) {
-			double a = totalpurchase[i];
-			if (a < min) {
-				min = a;
-				minindex = i;
+		for (int b = 0; b < totalpurchase.length; b++) {
+			if (totalpurchase[b] < min) {
+				min = totalpurchase[b];
+				minindex = b;
 			}
-		}
+		}	
 		
 		String newmin = String.format("%.2f", min);
+		// Smallest output line.
 		
-		// Variable for Smallest output line.
-		
-		String smallest = "Smallest: " + names[minindex] + " (" + newmin + ")";
+		System.out.println("Smallest: " + names[minindex] + " (" + newmin + ")");
 		
 		// Find average total purchase amount.
 		
-		double sum = totalpurchase[0];
+		double sum = 0.00;
 		
-		for (int i = 1; i < totalpurchase.length; i++) {
-			sum += totalpurchase[i];
+		for (int c = 0; c < totalpurchase.length; c++) {
+			sum += totalpurchase[c];
 		}
 		
-		double averagenum = sum / totalpurchase.length;
-		String newaverage = String.format("%.2f", averagenum);
+		double average = sum / totalpurchase.length;
 		
-		// Variable for Average output line.
-		String average = "Average: " + newaverage;
+		String newaverage = String.format("%.2f", average);
+		// Average output line.
 		
+		System.out.println("Average: " + newaverage);
 		
-		System.out.println(biggest);
-		System.out.println(smallest);
-		System.out.println(average);
-		
+	
 	}
 }
 
